@@ -10,6 +10,7 @@ body {
     text-align: center;
     color: #333;
     margin-top: 60px;
+    margin-top: 120;
   }
 
   #jobListings {
@@ -93,7 +94,9 @@ body {
   h1 {
     text-align:
       center;
-    color: #333;
+    color: #333;   
+     margin-top: 120;
+
   }
 
   #jobListings {
@@ -173,6 +176,7 @@ background-color: #0056b3;
     padding: 0p 20px 30px 20px;
     display: flex;
     align-items: center;
+    margin-top: -160;
     transition: 0.3s ease-out;
     backdrop-filter: blur(8px) brightness(1.2);
     -webkit-backdrop-filter: blur(8px) brightness(1.2);

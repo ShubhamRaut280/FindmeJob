@@ -12,6 +12,8 @@ class Header extends HTMLElement {
             align-items: center;
             justify-content: center;
             background-color:  #0a0a23;
+            margin-top: -160;
+
           }
   
           ul {
