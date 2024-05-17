@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Listings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <head>
+
+    <nav class="mask">
+  <a href="/">JobLister</a>
+  <ul class="list">
+    <li><a href="/">Home</a></li>
+    <li><a href="./search" >Search</a></li>
+    <li><a href="https://www.linkedin.com/in/suyogchavan/">LinkedIn</a></li>
+    <li><a href="https://www.github.com/suyogschavan">GitHub</a></li>
+  </ul>
+  <button class="search">Search</button>
+  <button class="menu">Menu</button>
+</nav>
+  </head>
+
+  <div class="container"></div>
+
+  <h1 class="jobsearch">Top Jobs in INDIA</h1>
+
+  <div id="jobListings">
+    {{#each jobs}}
+    <div class="job-card" onclick="redirectToJob('{{redirect_url}}')">
+      <h2>{{title}}</h2>
+      <p>Company: {{company.display_name}}</p>
+      <p>Location: {{location.display_name}}</p>
+      <p>Salary: {{salary_min}} - {{salary_max}} {{salary_currency}}</p>
+      <p>{{description}}</p>
+    </div>
+    {{/each}}
+  </div>
+
+  <script>
+    function redirectToJob(url) {
+      var newWindow = window.open(url, '_blank');
+      if (newWindow) {
+        newWindow.focus();
+      }
+      else { alert('Pop-up blocked. Please check your browser settings.'); }
+    }
+  </script>
+</body>
+
+</html>

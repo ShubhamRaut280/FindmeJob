@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Search</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <head>
+
+    <nav class="mask">
+  <a href="#">JobLister</a>
+  <ul class="list">
+    <li><a href="/home">Home</a></li>
+    <li><a href="./search" >Search</a></li>
+    <li><a href="https://www.linkedin.com/in/suyogchavan/">LinkedIn</a></li>
+    <li><a href="https://www.github.com/suyogschavan">GitHub</a></li>
+  </ul>
+</nav>
+  </head>
+  <h1 class="jobsearch">Job Search</h1>
+
+  <form action="/search" method="GET">
+    <label for="jobTitle">Job Title or Skills:</label>
+    <input type="text" id="jobTitle" name="jobTitle" placeholder="{{data2.jobTitle}}" required />
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" placeholder="{{data2.location}}" required />
+
+    <button type="submit">Search</button>
+  </form>
+
+  {{#if jobs}}
+  {{!-- <h2>Search Results</h2> --}}
+  <div id="jobListings">
+    {{#each jobs}}
+    <div class="job-card" onclick="redirectToJob('{{redirect_url}}')">
+      <h2>{{title}}</h2>
+      <p>{{company.display_name}}</p>
+      <p>Location: {{location.display_name}}</p>
+      <p>Salary: {{salary_min}} - {{salary_max}} {{salary_currency}}</p>
+      <p>{{description}}</p>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+  <script>
+    function redirectToJob(url) {
+      var newWindow = window.open(url, '_blank');
+      if (newWindow) {
+        newWindow.focus();
+      } else {
+        alert('Pop-up blocked.Pleasecheck your browser settings.');
+      }
+    }
+  </script>
+</body>
+
+</html>
