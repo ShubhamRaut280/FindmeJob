@@ -54,4 +54,3 @@ Contributions are welcome! If you have ideas for improvements or new features, f
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## [Let&#39;s Connect](http://linkedin.com/in/suyogchavan/)
